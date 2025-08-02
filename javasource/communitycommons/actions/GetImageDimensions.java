@@ -32,14 +32,16 @@ public class GetImageDimensions extends CustomJavaAction<IMendixObject>
 	@java.lang.Override
 	public IMendixObject executeAction() throws Exception
 	{
-		this.ImageParameter = __ImageParameter == null ? null : system.proxies.Image.initialize(getContext(), __ImageParameter);
+		this.ImageParameter = this.__ImageParameter == null ? null : system.proxies.Image.initialize(getContext(), __ImageParameter);
 
 		// BEGIN USER CODE
 		ImageDimensions imageDimensions = new ImageDimensions(getContext());
 		try (InputStream inputStream = Core.getImage(getContext(), this.ImageParameter.getMendixObject(), false)) {
 			BufferedImage bimg = ImageIO.read(inputStream);
-			imageDimensions.setHeight(bimg.getHeight());
-			imageDimensions.setWidth(bimg.getWidth());
+			if (bimg != null) {
+				imageDimensions.setHeight(bimg.getHeight());
+				imageDimensions.setWidth(bimg.getWidth());
+			}
 		}
 
 		return imageDimensions.getMendixObject();
@@ -48,6 +50,7 @@ public class GetImageDimensions extends CustomJavaAction<IMendixObject>
 
 	/**
 	 * Returns a string representation of this action
+	 * @return a string representation of this action
 	 */
 	@java.lang.Override
 	public java.lang.String toString()

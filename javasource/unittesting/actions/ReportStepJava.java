@@ -9,9 +9,11 @@
 
 package unittesting.actions;
 
+import unittesting.TestExecutionContext;
 import unittesting.TestManager;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.webui.CustomJavaAction;
+import unittesting.proxies.Assertion;
 
 public class ReportStepJava extends CustomJavaAction<java.lang.Boolean>
 {
@@ -27,13 +29,14 @@ public class ReportStepJava extends CustomJavaAction<java.lang.Boolean>
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		TestManager.instance().reportStep(message);
+		TestManager.instance().executionContext().collectStep(message);
 		return true;
 		// END USER CODE
 	}
 
 	/**
 	 * Returns a string representation of this action
+	 * @return a string representation of this action
 	 */
 	@java.lang.Override
 	public java.lang.String toString()
