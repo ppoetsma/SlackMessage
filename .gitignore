@@ -1,21 +1,25 @@
 # Mendix app
-src/*.bak
-src/*.classpath
-src/*.launch
-src/*.lock
-src/*.project
-src/deployment
-src/GPUCache
-src/releases
-
-test/*.bak
-test/*.classpath
-test/*.launch
-test/*.lock
-test/*.project
-test/deployment
-test/GPUCache
-test/releases
+!/javascriptsource/**/node_modules/
+.DS_Store
+*.mpr.bak
+*.mpr.lock
+/.classpath
+/.mendix-cache/
+/.project
+/.svn/
+/*.launch
+/**/node_modules/
+/deployment/
+/javasource/*/proxies/
+/javasource/system/
+/modeler-merge-marker
+/mprcontents/mprjournal*
+/nativemobile/builds
+/nativemobile/builds/
+/packages/
+/project-settings.user.json
+/releases/
+/vendorlib/temp/
 
 # Visual Studio Code
 .vscode
