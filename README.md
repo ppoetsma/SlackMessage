@@ -19,9 +19,10 @@ Its features are
 
 Download the module from the AppStore and add it to your project.
 
-Add microflow `ASu_SlackMessage` to your app's AfterStartup microflow.
-
-The module depends on AppStore module [CommunityCommons](https://marketplace.mendix.com/link/component/170).
+The module depends on these Marketplace modules
+* [CommunityCommons](https://marketplace.mendix.com/link/component/170)
+* [Data Widgets](https://marketplace.mendix.com/link/component/116540)
+* [Encryption](https://marketplace.mendix.com/link/component/1011)
 
 ## Security
 

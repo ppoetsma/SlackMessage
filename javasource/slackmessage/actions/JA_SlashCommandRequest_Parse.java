@@ -13,19 +13,22 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import com.mendix.systemwideinterfaces.core.IContext;
 import com.mendix.thirdparty.org.json.JSONObject;
-import com.mendix.webui.CustomJavaAction;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
 /**
  * The request body is a kist of key value pairs. This Java action converts it into a JSON string. Comvert the JSON string using IM_SlashCommandRequest to a SlashCommandRequest object.
  */
-public class JA_SlashCommandRequest_Parse extends CustomJavaAction<java.lang.String>
+public class JA_SlashCommandRequest_Parse extends UserAction<java.lang.String>
 {
-	private java.lang.String RequestBody;
+	private final java.lang.String RequestBody;
 
-	public JA_SlashCommandRequest_Parse(IContext context, java.lang.String RequestBody)
+	public JA_SlashCommandRequest_Parse(
+		IContext context,
+		java.lang.String _requestBody
+	)
 	{
 		super(context);
-		this.RequestBody = RequestBody;
+		this.RequestBody = _requestBody;
 	}
 
 	@java.lang.Override
